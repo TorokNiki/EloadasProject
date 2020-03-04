@@ -10,90 +10,87 @@ namespace EloadasProject.teszt
     [TestFixture]
     class Teszt
     {
+        Eloadas teszt;
+         [SetUp]
+        public void Setup()
+        {
+            teszt = new Eloadas(3,3);
+        }
         [TestCase]
         public void szabadHelyek()
         {
-            var test = new Eloadas(3, 3);
-            test.Lefoglal();
-            Assert.AreEqual(8, test.SzabadHelyek, "Hibás a férőhelyek száma");
+            teszt.Lefoglal();
+            Assert.AreEqual(8, teszt.SzabadHelyek, "Hibás a férőhelyek száma");
         }
 
         [TestCase]
         public void szabadHelyekTeli()
         {
-            var test = new Eloadas(3, 3);
-            test.Lefoglal();
-            test.Lefoglal();
-            test.Lefoglal();
-            test.Lefoglal();
-            test.Lefoglal();
-            test.Lefoglal();
-            test.Lefoglal();
-            test.Lefoglal();
-            test.Lefoglal();
-            Assert.AreEqual(0, test.SzabadHelyek, "Hibás a férőhelyek száma");
+            teszt.Lefoglal();
+            teszt.Lefoglal();
+            teszt.Lefoglal();
+            teszt.Lefoglal();
+            teszt.Lefoglal();
+            teszt.Lefoglal();
+            teszt.Lefoglal();
+            teszt.Lefoglal();
+            teszt.Lefoglal();
+            Assert.AreEqual(0, teszt.SzabadHelyek, "Hibás a férőhelyek száma");
         }
 
         [TestCase]
         public void szabadHelyekMinusz()
         {
-            var test = new Eloadas(2, 2);
-            Assert.Greater(test.SzabadHelyek, -1, "Hibás a férőhelyek száma");
+            Assert.Greater(teszt.SzabadHelyek, -1, "Hibás a férőhelyek száma");
         }
 
         [TestCase]
         public void teliEloadas()
         {
-            var test = new Eloadas(3, 3);
-            test.Lefoglal();
-            test.Lefoglal();
-            test.Lefoglal();
-            test.Lefoglal();
-            test.Lefoglal();
-            test.Lefoglal();
-            test.Lefoglal();
-            test.Lefoglal();
-            test.Lefoglal();
-            Assert.AreEqual(true, test.Teli, "Nem teli a Teli előadás.");
+            teszt.Lefoglal();
+            teszt.Lefoglal();
+            teszt.Lefoglal();
+            teszt.Lefoglal();
+            teszt.Lefoglal();
+            teszt.Lefoglal();
+            teszt.Lefoglal();
+            teszt.Lefoglal();
+            teszt.Lefoglal();
+            Assert.AreEqual(true, teszt.Teli, "Nem teli a Teli előadás.");
         }
 
         [TestCase]
         public void nemTeliEloadas()
         {
-            var test = new Eloadas(2, 2);
-            test.Lefoglal();
-            Assert.AreEqual(false, test.Teli, "Teli a nem teli előadás.");
+            teszt.Lefoglal();
+            Assert.AreEqual(false, teszt.Teli, "Teli a nem teli előadás.");
         }
 
         [TestCase]
         public void teliNull()
         {
-            var test = new Eloadas(2, 2);
-            Assert.AreNotEqual(null, test.Teli, "A változó null.");
+            Assert.AreNotEqual(null, teszt.Teli, "A változó null.");
         }
 
 
         [TestCase]
         public void foglaltTeszt()
         {
-            var test = new Eloadas(3, 3);
-            test.Lefoglal();
-            Assert.AreEqual(true, test.Foglalt(1, 1), "Nem foglalt a felfoglalt hely.");
+            teszt.Lefoglal();
+            Assert.AreEqual(true, teszt.Foglalt(1, 1), "Nem foglalt a felfoglalt hely.");
         }
 
         [TestCase]
         public void foglaltNull()
         {
-            var test = new Eloadas(3, 3);
-            test.Lefoglal();
-            Assert.AreNotEqual(null, test.Foglalt(1, 3), "A változó null.");
+            teszt.Lefoglal();
+            Assert.AreNotEqual(null, teszt.Foglalt(1, 3), "A változó null.");
         }
 
         [TestCase]
         public void lefoglalNull()
         {
-            var test = new Eloadas(3, 3);
-            Assert.AreNotEqual(null, test.Lefoglal(), "A változó null.");
+            Assert.AreNotEqual(null, teszt.Lefoglal(), "A változó null.");
         }
 
         [TestCase]
